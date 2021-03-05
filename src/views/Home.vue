@@ -7,11 +7,15 @@
 
 <script>
 import BaseCard from '../components/BaseCard.vue'
+import { mapState } from 'vuex'
 
 export default {
   components: {
     BaseCard
 
-  }
+  },
+  computed: mapState({
+
+  })
 }
 </script>
