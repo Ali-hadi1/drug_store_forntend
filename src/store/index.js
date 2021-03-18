@@ -1,6 +1,11 @@
 import { createStore } from 'vuex'
+import * as UserAuth from '@/store/modules/UserAuthentication'
 
 export default createStore({
+  modules: {
+    UserAuth
+
+  },
   state: {
     sidebarState: true,
     dropDownState: false
@@ -17,7 +22,5 @@ export default createStore({
   },
   getters: {
 
-  },
-  modules: {
   }
 })
