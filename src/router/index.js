@@ -24,12 +24,14 @@ const routes = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: Dashboard
+    component: Dashboard,
+    meta: { requriesAuth: true }
   },
   {
     path: '/users',
     name: 'Users',
-    component: Users
+    component: Users,
+    meta: { requriesAuth: true }
   },
   {
     path: '/about',
@@ -44,6 +46,20 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  const loggedIn = localStorage.getItem('user')
+
+  if (to.matched.some(record => record.meta.requriesAuth)) {
+    if (!loggedIn) {
+      next('/')
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
 })
 
 export default router

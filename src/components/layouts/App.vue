@@ -10,9 +10,9 @@
             </app-sidebar>
 
             <app-section>
-                <div slot:content>
-                    <slot name="content"/>
-                </div>
+                <template v-slot:content>
+                  <slot name="content"/>
+                </template>m
             </app-section>
         </div>
     </div>

@@ -1,10 +1,13 @@
 import { createStore } from 'vuex'
 import * as UserAuth from '@/store/modules/UserAuthentication'
+import * as province from '@/store/modules/province'
+import * as User from '@/store/modules/User'
 
 export default createStore({
   modules: {
-    UserAuth
-
+    UserAuth,
+    province,
+    User
   },
   state: {
     sidebarState: true,

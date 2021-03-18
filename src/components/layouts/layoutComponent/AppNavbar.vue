@@ -3,7 +3,7 @@
         <div class="h-full w-full flex justify-between items-center border-b border-gray-200">
             <div class="w-auto h-full flex items-center pl-4">
                 <span class="cursor-pointer text-gray-200" @click="sidebarState">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height='24' fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height='20' fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </span>
@@ -20,20 +20,22 @@
             </div>
 
             <div class="w-auto h-full flex items-center pr-4">
-                <div class="h-7 w-7 mr-2 relative mt-1 cursor-pointer">
+                <div class="h-5 w-5 mr-2 relative mt-1 cursor-pointer">
                     <svg class="h-full w-full text-gray-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                     </svg>
                 </div>
-                <div class="h-8 w-8 rounded-full overflow-hidden bg-indigo-600">
-                    <img v-bind:src="null" alt="Avatar" class="h-8 w-auto object-cover">
-                </div>
+                <app-avatar>
+
+                </app-avatar>
             </div>
         </div>
     </div>
 </template>
 <script>
+import AppAvatar from '../../AppAvatar.vue'
 export default {
+  components: { AppAvatar },
   data () {
     return {
     }
@@ -41,7 +43,6 @@ export default {
   methods: {
     sidebarState () {
       this.$store.commit('SET_SIDEBARSTATE')
-      console.log('being run')
     }
   }
 }

@@ -3,10 +3,10 @@
     <label v-if="label">{{ label }}</label>
     <input
       :type="type"
-      :value="value"
-      @input="updateValue"
+      :value="modelValue"
+      @input="$emit('update:modelValue' ,$event.target.value)"
       v-bind="$attrs"
-      class="px-2 py-1 rounded-sm focus:outline-none focus:border-purple-300 border border-gray-400"
+      class="px-2 py-1 rounded-sm focus:outline-none text-sm focus:border-purple-300 border border-gray-400"
       :class="[widthClass]"
     />
   </div>
@@ -24,18 +24,16 @@ export default {
       type: String,
       defualt: 'text'
     },
-    value: [String, Number],
+    modelValue: {
+      type: [String, Number],
+      defualt: ''
+    },
     widthClass: {
       type: String
     }
   },
   data: function () {
     return {}
-  },
-  methods: {
-    updateValue (event) {
-      this.$emit('input', event.target.value)
-    }
   }
 }
 </script>
