@@ -26,7 +26,9 @@
 <script>
 import App from '../components/layouts/App.vue'
 export default {
-  components: { App }
-
+  components: { App },
+  mounted () {
+    this.$store.dispatch('userAuthenticated')
+  }
 }
 </script>

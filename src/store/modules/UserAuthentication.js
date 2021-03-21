@@ -1,7 +1,8 @@
 import ApiServices from '../Services/ApiServices'
 
 export const state = {
-  user: null
+  user: null,
+  userAuth: null
 }
 
 export const mutations = {
@@ -11,9 +12,16 @@ export const mutations = {
     ApiServices.defaults.headers.common['Authorization'] = `Bearer ${
       userData.token
     }`
-    console.log(ApiServices.defaults.headers.common['Authorization'] = `Bearer ${
-      userData.token
-    }`)
+  },
+  SET_USER_AUTH (state, data) {
+    state.userAuth = data
+  },
+  CLEAR_USER_DATA () {
+    // (state)
+    // state.user = null
+    localStorage.removeItem('user')
+    // ApiServices.defaults.headers.common['Authorization'] = null
+    location.reload()
   }
 }
 
@@ -29,5 +37,15 @@ export const actions = {
           commit('SET_USER_DATA', data)
         }
       )
+  },
+  logout ({ commit }) {
+    commit('CLEAR_USER_DATA')
+  },
+  userAuthenticated () {
+    ApiServices.get('/userAuth').then(
+      (response) => {
+        this.commit('SET_USER_AUTH', response.data)
+      }
+    )
   }
 }
