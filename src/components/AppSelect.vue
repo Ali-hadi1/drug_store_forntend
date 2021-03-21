@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-2">
+  <div>
     <label for="">{{ label }}</label>
     <select
       :value="modelValue"
@@ -13,7 +13,7 @@
         :key="option"
         :selected="option === modelValue"
       >
-        {{ option.en_name }}
+        {{ option }}
       </option>
     </select>
   </div>
