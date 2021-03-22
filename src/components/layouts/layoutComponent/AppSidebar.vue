@@ -4,6 +4,7 @@
             <app-sidbar-link
                 title="Dashboard"
                 routeName="Dashboard"
+                textHoverClass="hover:text-blue-400"
                 paddingClass="py-2"
                 fontWeight="font-bold"
             >
@@ -17,7 +18,7 @@
                             title="Users List"
                             routeName="Users"
                             paddingClass="py-1"
-                            textHoverClass="hover:text-indgo-400"
+                            textHoverClass="hover:text-blue-400"
                             fontWeight="font-semibold"
                             activeClass="text-indigo-400"
                         >
