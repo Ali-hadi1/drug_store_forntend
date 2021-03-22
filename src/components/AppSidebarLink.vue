@@ -1,14 +1,19 @@
 <template>
-  <li class="w-full my-1 box-border">
+  <li class="list-none w-full my-1 box-border">
     <router-link
         v-bind="$attrs"
         :to="{name:routeName}"
         exact
-        class="w-full block px-3 list-none hover:bg-link-hover rounded text-sm cursor-pointer text-gray-300"
-        :class="[paddingClass,textHoverClass , fontWeight]"
+        class="w-full block px-3 hover:bg-link-hover rounded text-sm cursor-pointer"
+        :class="[paddingClass,textHoverClass , fontWeight, textColor]"
         :active-class="activeClass"
     >
-        {{title}}
+      <span class="flex items-center gap-1">
+        <font-awesome-icon v-if="icon.length > 1" :icon="icon"/>
+        <span v-if="title.length > 1">
+          {{title}}
+        </span>
+      </span>
     </router-link>
   </li>
 </template>
@@ -18,7 +23,11 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      default: ''
+    },
+    icon: {
+      type: String,
+      default: ''
     },
     routeName: {
       type: String,
@@ -39,6 +48,10 @@ export default {
     activeClass: {
       type: String,
       default: 'bg-link-active'
+    },
+    textColor: {
+      type: String,
+      default: 'text-gray-300'
     }
   },
   data: function () {
