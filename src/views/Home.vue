@@ -1,17 +1,18 @@
 <template>
-  <div class="bg-blue-500">
-    <h1>Home page</h1>
-    <base-card></base-card>
+  <div>
+    <app-navbar>
+
+    </app-navbar>
   </div>
 </template>
 
 <script>
-import BaseCard from '../components/BaseCard.vue'
 import { mapState } from 'vuex'
+import AppNavbar from '../components/AppNavbar.vue'
 
 export default {
   components: {
-    BaseCard
+    AppNavbar
 
   },
   computed: mapState({
