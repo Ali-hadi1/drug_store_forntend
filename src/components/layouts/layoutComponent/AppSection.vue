@@ -1,6 +1,6 @@
 <template>
-    <div class="p-2  bg-main-content"
-        :class="{'sm:ml-48':sideBarDisplay, 'w-full':!sideBarDisplay, 'w-auto':sideBarDisplay }"
+    <div class="p-2"
+        :class="{'md:ml-48':sideBarDisplay, 'w-full':!sideBarDisplay, 'w-auto':sideBarDisplay }"
     >
       <div class=" w-full rounded-b-md h-auto mt-1">
           <div class="">

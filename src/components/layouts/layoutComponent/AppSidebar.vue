@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed h-screen sm:w-48 bg-sidebar hidden sm:block" v-if="sideBarDisplay">
+    <div class="fixed h-screen sm:w-48 bg-sidebar hidden md:block" v-if="sideBarDisplay">
         <ul class="m-2">
             <app-sidbar-link
                 title="Dashboard"
