@@ -52,5 +52,8 @@ export const actions = {
 export const getters = {
   loggedIn (state) {
     return !!state.user
+  },
+  authUser (state) {
+    return state.userAuth
   }
 }

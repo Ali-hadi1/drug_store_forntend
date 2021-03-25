@@ -7,10 +7,17 @@
     >
     <a href="#">
       <img
+      v-if="null"
       v-bind:src="null"
       alt="Avatar"
       class="h-8 w-auto object-cover"
       />
+      <span
+        v-else
+        class="h-full w-full rounded-full flex justify-center items-center uppercase bg-green-400"
+      >
+        {{authUser ? authUser.name[0] : ''}}
+      </span>
     </a>
     </div>
 
@@ -44,6 +51,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import AppSidebarLink from './AppSidebarLink.vue'
 export default {
   components: { AppSidebarLink },
@@ -59,6 +67,12 @@ export default {
     logout () {
       this.$store.dispatch('logout')
     }
+  },
+  created () {
+    this.$store.dispatch('userAuthenticated')
+  },
+  computed: {
+    ...mapGetters(['authUser'])
   }
 }
 </script>
