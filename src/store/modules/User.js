@@ -7,7 +7,6 @@ export const state = {
 export const mutations = {
   SET_USERS_LIST_DATA (state, data) {
     state.usersList = data
-    console.log(data)
   }
 }
 
@@ -17,5 +16,11 @@ export const actions = {
       async response => {
         await this.commit('SET_USERS_LIST_DATA', response.data)
       })
+  }
+}
+
+export const getters = {
+  userList (state) {
+    return state.usersList
   }
 }
