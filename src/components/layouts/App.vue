@@ -10,6 +10,9 @@
             </app-sidebar>
 
             <app-section>
+                <template v-slot:header>
+                  <slot name="header"/>
+                </template>
                 <template v-slot:content>
                   <slot name="content"/>
                 </template>m
