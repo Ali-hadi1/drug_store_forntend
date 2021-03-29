@@ -4,7 +4,8 @@ import Register from '@/views/Register.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import Users from '@/views/Users.vue'
 import Login from '@/views/Login.vue'
-import Profile from '@/views/Profile.vue'
+import Profile from '@/views/Profile/Profile.vue'
+import AddUser from '@/views/AddUser.vue'
 
 const routes = [
   {
@@ -35,10 +36,22 @@ const routes = [
     meta: { requriesAuth: true }
   },
   {
+    path: '/addUser',
+    name: 'AddUser',
+    component: AddUser,
+    meta: { requriesAuth: true }
+  },
+  {
     path: '/profile',
     name: 'Profile',
     component: Profile,
-    meta: { requriesAuth: true }
+    meta: { requriesAuth: true },
+    children: [
+      {
+        path: ':id',
+        component: Profile
+      }
+    ]
   },
   {
     path: '/about',
