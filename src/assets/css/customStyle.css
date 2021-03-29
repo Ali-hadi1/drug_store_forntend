@@ -4,3 +4,6 @@
 .bg-link-active{
     background-color: #35404d;
 }
+.fit-content{
+    height: fit-content;
+}
