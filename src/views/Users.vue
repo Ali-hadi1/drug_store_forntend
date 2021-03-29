@@ -1,5 +1,20 @@
 <template>
     <app>
+        <template v-slot:header>
+          <app-sidebar-link
+            title="Add"
+            icon="user-plus"
+            routeName="AddUser"
+            paddingClass="py-1"
+            textHoverClass="hover:text-white"
+            fontWeight="font-semibold"
+            activeClass="text-indigo-400"
+            textColor="text-gray-500"
+            bgColor="bg-green-400"
+          >
+
+          </app-sidebar-link>
+        </template>
         <template v-slot:content>
             <div class="w-full bg-gray-300 my-2 p-2 rounded">
               <div class="w-80 h-8">
@@ -83,9 +98,9 @@
                       </span>
                     </td>
                     <td class="px-2 py-2 flex justify-center items-center whitespace-nowrap text-right text-sm font-medium">
-                      <a href="#" class="text-lg px-1 text-gray-800 hover:text-gray-900">
+                      <router-link :to="'/Profile/'+ user.id" class="px-1 text-base">
                         <font-awesome-icon icon="user-circle"/>
-                      </a>
+                      </router-link>
                       <a href="#" class="px-1 text-green-500 text-sm hover:text-green-700">
                         <font-awesome-icon icon="edit"/>
                       </a>
@@ -102,10 +117,12 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
+import AppSidebarLink from '../components/AppSidebarLink.vue'
 import App from './../components/layouts/App.vue'
 export default {
   components: {
-    App
+    App,
+    AppSidebarLink
   },
   data () {
     return {

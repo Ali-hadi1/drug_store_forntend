@@ -7,6 +7,7 @@
                 textHoverClass="hover:text-blue-400"
                 paddingClass="py-2"
                 fontWeight="font-bold"
+                titleTextSize="12px"
             >
 
             </app-sidbar-link>
@@ -17,10 +18,26 @@
                         <app-sidbar-link
                             title="Users List"
                             routeName="Users"
+                            icon="users"
                             paddingClass="py-1"
                             textHoverClass="hover:text-blue-400"
                             fontWeight="font-semibold"
                             activeClass="text-indigo-400"
+                            iconAndTitlePadding="pl-2"
+                            titleTextSize="12px"
+                        >
+
+                        </app-sidbar-link>
+                        <app-sidbar-link
+                            title="Add User"
+                            icon="user-plus"
+                            routeName="AddUser"
+                            paddingClass="py-1"
+                            textHoverClass="hover:text-blue-400"
+                            fontWeight="font-semibold"
+                            activeClass="text-indigo-400"
+                            iconAndTitlePadding="pl-2"
+                            titleTextSize="12px"
                         >
 
                         </app-sidbar-link>
