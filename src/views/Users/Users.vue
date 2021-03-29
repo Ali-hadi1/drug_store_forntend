@@ -6,7 +6,7 @@
             icon="user-plus"
             routeName="AddUser"
             paddingClass="py-1"
-            textHoverClass="hover:text-white"
+            textHoverClass="hover:text-whitee"
             fontWeight="font-semibold"
             activeClass="text-indigo-400"
             textColor="text-gray-500"
@@ -117,8 +117,8 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
-import AppSidebarLink from '../components/AppSidebarLink.vue'
-import App from './../components/layouts/App.vue'
+import AppSidebarLink from '../../components/AppSidebarLink.vue'
+import App from '../../components/layouts/App.vue'
 export default {
   components: {
     App,
