@@ -1,6 +1,9 @@
 <template>
   <div class="pt-2">
-    <label v-if="label">{{ label }}</label>
+    <label
+      v-if="label"
+      :class="[labelStyle]"
+    >{{ label }}</label>
     <input
       :type="type"
       :value="modelValue"
@@ -30,6 +33,10 @@ export default {
     },
     widthClass: {
       type: String
+    },
+    labelStyle: {
+      type: String,
+      defualt: ''
     }
   },
   data: function () {
