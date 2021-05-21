@@ -1,7 +1,7 @@
 import ApiServices from '../Services/ApiServices'
 
 export const state = {
-  provinces: {}
+  provinces: null
 }
 
 export const mutations = {
