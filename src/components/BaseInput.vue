@@ -9,7 +9,7 @@
       :value="modelValue"
       @input="$emit('update:modelValue' ,$event.target.value)"
       v-bind="$attrs"
-      class="px-2 py-1 rounded-sm focus:outline-none text-sm focus:border-purple-300 border border-gray-400"
+      class="px-2 py-1 text-xs rounded-sm focus:outline-none focus:border-purple-300 border border-gray-400"
       :class="[widthClass]"
     />
   </div>
