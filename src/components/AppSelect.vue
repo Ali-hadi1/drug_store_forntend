@@ -1,11 +1,14 @@
 <template>
   <div>
-    <label for="">{{ label }}</label>
+    <label
+      v-if="label"
+      :class="[labelStyle]"
+    >{{ label }}</label>
     <select
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       v-bind="$attrs"
-      class="px-2 py-1 rounded-sm focus:outline-none focus:border-purple-300 border border-gray-400"
+      class="px-2 py-1 text-xs rounded-sm focus:outline-none focus:border-purple-300 border border-gray-400"
       :class="[widthClass]"
     >
       <option
@@ -13,7 +16,7 @@
         :key="option"
         :selected="option === modelValue"
       >
-        {{ option }}
+        {{ option[selectionCol] }}
       </option>
     </select>
   </div>
@@ -37,6 +40,14 @@ export default {
     },
     widthClass: {
       type: String
+    },
+    selectionCol: {
+      type: String,
+      required: true
+    },
+    labelStyle: {
+      type: String,
+      defualt: ''
     }
   }
 }
