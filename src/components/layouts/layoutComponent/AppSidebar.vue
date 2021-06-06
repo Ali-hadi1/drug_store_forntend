@@ -45,6 +45,27 @@
                 </transition>
               </template>
             </app-sidbar-link-group>
+            <app-sidbar-link-group title="Porducts">
+              <template v-slot:links>
+                <transition name="animate">
+                    <div>
+                        <app-sidbar-link
+                            title="Product List"
+                            routeName="products"
+                            icon="users"
+                            paddingClass="py-1"
+                            textHoverClass="hover:text-blue-400"
+                            fontWeight="font-semibold"
+                            activeClass="text-indigo-400"
+                            iconAndTitlePadding="pl-2"
+                            titleTextSize="12px"
+                        >
+
+                        </app-sidbar-link>
+                    </div>
+                </transition>
+              </template>
+            </app-sidbar-link-group>
         </ul>
     </div>
 </template>
