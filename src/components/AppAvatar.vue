@@ -1,27 +1,30 @@
 <template>
-  <div class="relative ">
+  <div class="relative">
     <div
       class="h-6 w-6 rounded-full overflow-hidden bg-indigo-600"
       @click="toggleVisibility"
       @keydown.exact.space.prevent="toggleVisibility"
     >
-    <a href="#">
-      <img
-      v-if="null"
-      v-bind:src="null"
-      alt="Avatar"
-      class="h-8 w-auto object-cover"
-      />
-      <span
-        v-else
-        class="h-full w-full rounded-full flex justify-center items-center uppercase bg-green-400"
-      >
-        {{authUser ? authUser.name[0] : ''}}
-      </span>
-    </a>
+      <a href="#">
+        <img
+          v-if="null"
+          v-bind:src="null"
+          alt="Avatar"
+          class="h-8 w-auto object-cover"
+        />
+        <span
+          v-else
+          class="h-full w-full rounded-full flex justify-center items-center uppercase bg-green-400"
+        >
+          {{ authUser ? authUser.name[0] : '' }}
+        </span>
+      </a>
     </div>
 
-    <div v-if="isVisible" class="absolute -right-1 top-8 bg-gray-100 w-44 rounded">
+    <div
+      v-if="isVisible"
+      class="absolute -right-1 top-8 bg-gray-100 w-44 rounded"
+    >
       <ul class="w-full">
         <li class="dropdown-items">
           <app-sidebar-link
@@ -33,7 +36,6 @@
             activeClass="text-gray-700"
             textColor="text-gray-700"
           >
-
           </app-sidebar-link>
         </li>
         <li class="dropdown-items">
@@ -41,7 +43,7 @@
             @click.prevent="logout"
             class="focus:outline-none w-full h-full flex gap-1 items-center justify-start px-3 py-2 font-thin text-gray-700 hover:text-blue-400"
           >
-            <font-awesome-icon icon="sign-out-alt"/>
+            <font-awesome-icon icon="sign-out-alt" />
             logout
           </button>
         </li>
@@ -77,6 +79,4 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
