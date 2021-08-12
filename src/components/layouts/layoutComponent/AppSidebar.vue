@@ -62,6 +62,20 @@
                         >
 
                         </app-sidbar-link>
+
+                        <app-sidbar-link
+                            title="Product Store"
+                            routeName="product Store"
+                            icon="users"
+                            paddingClass="py-1"
+                            textHoverClass="hover:text-blue-400"
+                            fontWeight="font-semibold"
+                            activeClass="text-indigo-400"
+                            iconAndTitlePadding="pl-2"
+                            titleTextSize="12px"
+                        >
+
+                        </app-sidbar-link>
                     </div>
                 </transition>
               </template>
