@@ -1,7 +1,8 @@
 import ApiServices from '../Services/ApiServices'
 
 export const state = {
-  roles: null
+  roles: null,
+  errors: null
 }
 
 export const mutations = {
