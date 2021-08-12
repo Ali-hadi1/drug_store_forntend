@@ -6,7 +6,7 @@
         exact
         class="w-full block px-3 hover:bg-link-hover rounded text-sm cursor-pointer"
         :class="[paddingClass,textHoverClass , fontWeight, textColor, bgColor]"
-        :active-class="activeClass"
+        :exact-active-class="activeClass"
     >
       <span class="flex items-center gap-1">
         <font-awesome-icon v-if="icon.length > 1" :icon="icon"/>
