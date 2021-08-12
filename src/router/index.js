@@ -6,6 +6,8 @@ import Users from '@/views/Users/Users.vue'
 import Login from '@/views/Login.vue'
 import Profile from '@/views/Profile/Profile.vue'
 import AddUser from '@/views/Users/AddUser.vue'
+import ProductList from '@/views/Product/ProductList.vue'
+import ProductForm from '@/views/Product/ProductForm.vue'
 
 const routes = [
   {
@@ -49,10 +51,31 @@ const routes = [
     children: [
       {
         path: ':id',
-        component: Profile
+        component: Profile,
+        props: true
       }
     ]
   },
+
+  /// ////////////   porducts' routes
+  {
+    path: '/products',
+    name: 'products',
+    component: ProductList,
+    children: [
+      // {
+      //   path: '',
+      //   component: ProductList
+      // },
+      {
+        path: 'store',
+        name: 'product Store',
+        component: ProductForm
+      }
+    ],
+    meta: { requriesAuth: true }
+  },
+
   {
     path: '/about',
     name: 'About',
